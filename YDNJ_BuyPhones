@@ -8,6 +8,7 @@ const TAX_RATE = 1.07;
 const PHONE_PRICE = 99.99;
 const ACCESSORY_PRICE = 9.99;
 
+
 function buyPhones (){
   if (currentTotal + PHONE_PRICE * TAX_RATE < spendingThreshold) {
     currentTotal += (PHONE_PRICE * TAX_RATE);
@@ -25,11 +26,10 @@ function buyPhones (){
 
 function printReceipt () {
   currentTotal = currentTotal.toFixed(2);
-    console.log("Phones *  " + howManyPhones + " = " + howManyPhones * PHONE_PRICE);
-    console.log("Accessories * " + howManyAccessories + " = " + howManyAccessories * ACCESSORY_PRICE);
+    console.log("Phones *  " + howManyPhones + " = $" + howManyPhones * PHONE_PRICE);
+    console.log("Accessories * " + howManyAccessories + " = $" + howManyAccessories * ACCESSORY_PRICE);
     console.log("Tax " + TAX_RATE);
-    console.log("Total = " + currentTotal);
-
+    console.log("Total = $" + currentTotal);
 }
 
 do {buyPhones()} while (currentTotal + PHONE_PRICE * TAX_RATE < spendingThreshold);
